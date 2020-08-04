@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Alert, Button, Modal } from "react-bootstrap";
+import {} from "react-bootstrap";
 import api from "../../services/api";
 
 export default function Login({ history }) {
@@ -10,8 +10,6 @@ export default function Login({ history }) {
     console.log(email);
 
     const response = await api.post("/sessions", { email });
-
-    console.log(response.data);
 
     if (response.data == null) {
       alert("Usuario não encontrado");
@@ -36,7 +34,7 @@ export default function Login({ history }) {
           id="email"
           placeholder="Seu melhor e-email"
           value={email}
-          onChange={event => setEmail(event.target.value)}
+          onChange={(event) => setEmail(event.target.value)}
         />
         <button className="btn" type="submit">
           Entrar
